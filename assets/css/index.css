@@ -128,9 +128,47 @@ html {
     z-index: 1;
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    /* Responsive width and alignment */
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+
+    /* Fade-in animation */
+    opacity: 0;
     animation: fadeIn 1.2s ease-in forwards;
-    animation-delay: 0.0s;
+    animation-delay: 0s;
 }
+
+/* Optional hover effect */
+.intro-text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade-in keyframes */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive text adjustments for smaller devices */
+@media (max-width: 768px) {
+    .intro-text {
+        padding: 20px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-text {
+        padding: 15px 15px;
+        font-size: 0.9rem;
+        border-radius: 15px;
+    }
+}
+
 
 .intro-text {
     position: relative;
@@ -275,33 +313,54 @@ html {
     }
 }
 
-.intro-image img {
+/* Container */
+.intro-image {
     width: 100%;
     max-width: 350px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+/* Image */
+.intro-image img {
+    width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1; /* Keeps it square */
+    aspect-ratio: 1 / 1; /* Ensures square image */
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #fff;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     display: block;
-    margin: 0 auto; /* center in container */
+    margin: 0 auto;
 
-    /* Fade-in animation */
+    /* Animation */
     opacity: 0;
     animation: fadeIn 1.2s ease-in forwards;
     animation-delay: 0.5s;
 }
 
-.intro-image {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto; /* center the image */
-    transition: transform 0.3s ease;
-}
-
+/* Hover effect */
 .intro-image:hover {
     transform: translateY(-10px) scale(1.05);
+}
+
+/* Fade-in keyframes */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+    .intro-image {
+        max-width: 80vw;
+    }
+
+    .intro-image img {
+        border-width: 3px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
 }
 
 /* Keyframes for fade-in */
